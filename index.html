@@ -13,6 +13,31 @@
         <h1>The Odin Project Library</h1>
     </div>
 
+    <div class="expand-form">
+        <button onclick="openForm()">Add New Book
+        </button>
+    </div>
+
+    <div class="add-book">
+
+        <form name="newBook">
+            <label for="title"><b>Title</b></label>
+            <input type="text" placeholder="book title..." name="title" required><br>
+
+            <label for="author"><b>Author</b></label>
+            <input type="author" placeholder="author..." name="author" required><br>
+
+            <label for="pageCount"><b>Page Count</b></label>
+            <input type="text" placeholder="page count..." name="pageCount" required><br>
+
+            <label for="read"><b>Have you read this yet?</b></label>
+            <input type="radio" name="read"><label for="read">Yes</label>
+            <input type="radio" name="read"><label for="read">No</label><br>
+
+            <button>Submit</button> <button class="close-form" onclick="closeForm()">Close Form</button>
+        </form>
+    </div>
+
     <div class="card-wrapper">
 
         <div class="display-card">
@@ -26,31 +51,6 @@
                 <div class="read"><p><b>Not ready yet!</b></p></div>
             </div>
         </div>
-
-        <div class="display-card">
-            <div class="thumbnail">
-                <img src="img/lotr.jpg" alt="Lord of the Rings" width="150px" height="200px">
-            </div>
-            <div class="book-info">
-                <div class="title"><p><b>Title:</b> Lord of the Rings</p></div>
-                <div class="author"><p><b>Author:</b> John R.R Tolkien</p></div>
-                <div class="page-count"><p><b>Page Count:</b> 423</p></div>
-                <div class="read"><p><b>Not ready yet!</b></p></div>
-            </div>
-        </div>
-
-        <div class="display-card">
-            <div class="thumbnail">
-                <img src="img/lotr.jpg" alt="Lord of the Rings" width="150px" height="200px">
-            </div>
-            <div class="book-info">
-                <div class="title"><p><b>Title:</b> Lord of the Rings</p></div>
-                <div class="author"><p><b>Author:</b> John R.R Tolkien</p></div>
-                <div class="page-count"><p><b>Page Count:</b> 423</p></div>
-                <div class="read"><p><b>Not ready yet!</b></p></div>
-            </div>
-        </div>
-
     </div>
 </div>
 </body>

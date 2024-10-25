@@ -3,6 +3,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html body {
@@ -15,7 +16,7 @@ html body {
 }
 
 .wrapper {
-    width: 80%;
+    width: 90%;
     margin: 50px auto;
     border-radius: 30px;
     background-color: rgb(233, 233, 233);
@@ -44,10 +45,13 @@ html body {
     margin: 30px;
     padding: 20px;
     gap: 25px;
+    justify-items: center;
 }
 
 .display-card {
+    width: 70%;
     display: grid;
+    align-items: center;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     border: 1px solid #104911;
@@ -66,4 +70,23 @@ html body {
     margin: 0 20px;
     padding: 3px 8px;
     border-left: 1px solid #104911;
+}
+
+.add-book {
+    width: 60%;
+    display: none;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #104911;
+}
+
+.expand-form {
+    margin: 25px 0 0 0;
+    text-align: center;
+}
+
+.expand-form button {
+    width: 60%;
+    padding: 10px;
 }
