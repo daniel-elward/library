@@ -20,21 +20,22 @@
 
     <div class="add-book">
 
-        <form name="newBook">
-            <label for="title"><b>Title</b></label>
-            <input type="text" placeholder="book title..." name="title" required><br>
+        <form id="newBookForm">
+            <label><b>Title</b><input type="text" name="title" required><br></label>
 
-            <label for="author"><b>Author</b></label>
-            <input type="author" placeholder="author..." name="author" required><br>
 
-            <label for="pageCount"><b>Page Count</b></label>
-            <input type="text" placeholder="page count..." name="pageCount" required><br>
+            <label><b>Author</b><input type="author" name="author" required><br></label>
 
-            <label for="read"><b>Have you read this yet?</b></label>
-            <input type="radio" name="read"><label for="read">Yes</label>
-            <input type="radio" name="read"><label for="read">No</label><br>
+            <label><b>Page Count</b><input type="text" name="pageCount" required><br></label>
 
-            <button>Submit</button> <button class="close-form" onclick="closeForm()">Close Form</button>
+            <label><b>Have you read this book?</b>
+            <select name="read">
+                <option>Yes</option>
+                <option>No</option>
+            </select></label><br>
+
+            <button type="submit" onclick="closeForm()">Submit</button> 
+            <button class="close-form" onclick="closeForm()">Close Form</button>
         </form>
     </div>
 
