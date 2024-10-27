@@ -1,11 +1,16 @@
 //expand/collapse new book form
-function openForm() {
-    document.querySelector(".add-book").style.display = "block";
-  }
-  
-  function closeForm() {
+function openCloseForm() {
+  let addBookDOM = document.querySelector(".add-book");
+  let addBookBtnDOM = document.getElementById("addBtnText");
+
+  if (addBookDOM.style.display === "block"){
     document.querySelector(".add-book").style.display = "none";
+    addBookBtnDOM.innerHTML = "Add New Book <b>+</b>";
+  } else {
+    document.querySelector(".add-book").style.display = "block";
+    addBookBtnDOM.innerHTML = "Add New Book <b>-</b>";
   }
+}
 
 myLibrary = [
   {image: "book-placeholder.jpg", title: "The Lord of the Rings", author: "John R.R Tolkien", pageCount: 423, read: "No", id: 0},
@@ -29,14 +34,14 @@ function book(title, author, pageCount, read) {
 function displayBooks (){
 
     //clear library to avoid duplicating
-    const getCardWrapper = document.querySelector('.card-wrapper');
+    const getCardWrapper = document.querySelector(".card-wrapper");
 
     getCardWrapper.innerHTML = "";
 
     for (let i = 0; i < myLibrary.length; i++){
-      let createDiv = document.createElement('div');
+      let createDiv = document.createElement("div");
 
-      createDiv.classList.add('display-card');
+      createDiv.classList.add("display-card");
       createDiv.innerHTML = 
         `<div class="thumbnail">
             <img src="img/book-placeholder.jpg" alt="${myLibrary[i].title}" width="150px" height="200px">
@@ -60,23 +65,16 @@ function displayBooks (){
     }
 }
 
-const newBookForm = document.querySelector('form');
+const newBookForm = document.querySelector("form");
 
-newBookForm.addEventListener('submit', (event) => {
+newBookForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const newBookData = new FormData(newBookForm);
   const bookObj = Object.fromEntries(newBookData); 
 
-  let addBook = new book(bookObj.thumbnail, bookObj.title, bookObj.author, bookObj.pageCount, bookObj.read, bookObj.id)
+  let addBook = new book(bookObj.title, bookObj.author, bookObj.pageCount, bookObj.read, bookObj.id)
 
-  /*
-  THIS WORKS - INCLUDING ID AND TITLE. I WANT TO USE THE OBJ CONSTRUCTOR THOUGH
-  myLibrary.push({image: "book-placeholder.jpg", title: `${bookObj.title}`, author: `${bookObj.author}`, pageCount: bookObj.pageCount, read: bookObj.read, id: myLibrary.length})
-  */
-
-  myLibrary.push({image: "book-placeholder.jpg", title: `${bookObj.title}`, author: `${bookObj.author}`, pageCount: bookObj.pageCount, read: bookObj.read, id: myLibrary.length})
-
-  //myLibrary.push(addBook);
+  myLibrary.push(addBook);
 
   displayBooks()
 })

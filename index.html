@@ -14,7 +14,8 @@
     </div>
 
     <div class="expand-form">
-        <button onclick="openForm()">Add New Book
+        <button onclick="openCloseForm()">
+            <p id="addBtnText">Add New Book <b>+</b></p>
         </button>
     </div>
 
@@ -36,15 +37,13 @@
 
             <!--onclick="closeForm()" add this back to submit button when finished-->
 
-            <button type="submit">Submit</button> 
-            <button class="close-form" onclick="closeForm()">Close Form</button>
+            <button type="submit" id="addBook">Submit</button> 
         </form>
     </div>
 
     <div class="card-wrapper">
 
     </div>
-    <button class="removeBook" onclick="removeBook(this.value)" value="4">Remove Book</button>
 </div>
 </body>
 </html>

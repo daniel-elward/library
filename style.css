@@ -84,7 +84,7 @@ html body {
 
 .add-book {
     width: 60%;
-    display: block; /*change to none when finished*/
+    display: none;
     margin: 0 auto;
     padding: 20px;
     background-color: white;
