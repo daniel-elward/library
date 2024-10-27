@@ -59,6 +59,16 @@ html body {
     padding: 20px;
 }
 
+.display-card button {
+    width: 150px;
+    height: 40px;
+    margin: 10px 0;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: #ddcecd;
+} 
+
 .thumbnail {
     text-align: center;
     grid-column: 1/2;
@@ -74,7 +84,7 @@ html body {
 
 .add-book {
     width: 60%;
-    display: none;
+    display: block; /*change to none when finished*/
     margin: 0 auto;
     padding: 20px;
     background-color: white;
@@ -89,4 +99,12 @@ html body {
 .expand-form button {
     width: 60%;
     padding: 10px;
+}
+
+.removeBtn {
+    text-align: center;
+}
+
+.toggleRead {
+    text-align: center;
 }

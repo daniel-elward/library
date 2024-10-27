@@ -30,11 +30,13 @@
 
             <label><b>Have you read this book?</b>
             <select name="read">
-                <option>Yes</option>
-                <option>No</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
             </select></label><br>
 
-            <button type="submit" onclick="closeForm()">Submit</button> 
+            <!--onclick="closeForm()" add this back to submit button when finished-->
+
+            <button type="submit">Submit</button> 
             <button class="close-form" onclick="closeForm()">Close Form</button>
         </form>
     </div>
@@ -42,6 +44,7 @@
     <div class="card-wrapper">
 
     </div>
+    <button class="removeBook" onclick="removeBook(this.value)" value="4">Remove Book</button>
 </div>
 </body>
 </html>
