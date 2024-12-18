@@ -17,6 +17,7 @@ myLibrary = [
   {image: "book-placeholder.jpg", title: "IT", author: "Stephen King", pageCount: 1138, read: "Yes", id: 1}
 ];
 
+/*
 function book(title, author, pageCount, read) {
 
     this.title = title;
@@ -29,6 +30,44 @@ function book(title, author, pageCount, read) {
     this.info = function(){
         console.log(`${this.title} by ${this.author}, ${pageCount} pages, ${read}`)
     }
+}
+*/
+
+class book {
+
+  constructor(title, author, pageCount, read) {
+
+    this._title = title;
+    this._author = author;
+    this._pageCount = pageCount;
+    this._read = read;
+    this._id = myLibrary.length; //increments for a book ID
+  }
+
+  get title(){
+
+    return this._title;
+  }
+
+  get author() {
+
+    return this._author;
+  }
+
+  get pageCount() {
+
+    return this._pageCount;
+  }
+
+  get read() {
+
+    return this._read;
+  }
+
+  get id() {
+
+    return this._id;
+  }
 }
 
 function displayBooks (){
@@ -72,6 +111,8 @@ newBookForm.addEventListener("submit", (event) => {
   const newBookData = new FormData(newBookForm);
   const bookObj = Object.fromEntries(newBookData); 
 
+  console.log(`book OBJ variable is ${bookObj}`)
+
   let addBook = new book(bookObj.title, bookObj.author, bookObj.pageCount, bookObj.read, bookObj.id)
 
   myLibrary.push(addBook);
@@ -93,7 +134,7 @@ function toggleRead(buttonValue){
   let value = buttonValue;
   let objIndex = myLibrary.findIndex(elem => elem[bookID] == value);
 
-  console.log(objIndex)
+  //console.log(objIndex)
 
   if (myLibrary[objIndex].read === "Yes") {
     myLibrary[objIndex].read = "No"
